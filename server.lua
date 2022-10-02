@@ -2,7 +2,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 
-QBCore.Commands.Add("setname", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
+QBCore.Commands.Add(Config.CommandName, '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
     local src = source
     if args[1] ~= nil then
         print("^1Cambio nombre: ^0" .. args[1])
@@ -42,6 +42,8 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , adminid)
     charinfo.firstname = fnew
     charinfo.lastname = lnew
     charinfo = json.encode(charinfo)
+    local msjtosend = '{"content": null,"embeds": [{"title": "Name Change '..GetPlayerName(src)..'", "description": "Admin '..GetPlayerName(admin)..' gives name change to '..GetPlayerName(src)..'\\nOld Name: '..oldname..' ' .. oldlname.. '\\nNew Name: '..fnew.. ' ' .. lnew..'", "color": 9305944, "author": {"name": "AdminExtras"} } ], "attachments": [] }'
+    informDiscord(Config.Webhook ,msjtosend)
     DropPlayer(src ,'Su Nombre ha sido cambiado con exito, Ingrese nuevamente al servidor')
     MySQL.Async.execute('UPDATE players SET charinfo = @charinfo WHERE citizenid = @senderId',
     { ['charinfo'] =  charinfo, ['senderId'] = Player.PlayerData.citizenid },
@@ -49,9 +51,7 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , adminid)
      -- print(affectedRows)
     end
     )
-    local msjtosend = '{"content": null,"embeds": [{"title": "Name Change '..GetPlayerName(src)..'", "description": "Admin '..GetPlayerName(admin)..' gives name change to '..GetPlayerName(src)..'\\nOld Name: '..oldname..' ' .. oldlname.. '\\nNew Name: '..fnew.. ' ' .. lnew..'", "color": 9305944, "author": {"name": "AdminExtras"} } ], "attachments": [] }'
 
-      informDiscord(Config.Webhook ,msjtosend)
 end)
 
 --not used maybe will be used on esx support future update
