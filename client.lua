@@ -8,19 +8,19 @@ function trim(s)
 RegisterNetEvent('rz_adminextras:newname')
 AddEventHandler('rz_adminextras:newname', function(adminId)
     local admin = adminId
-    if DebugMode then print("Cambiar nombre")end
+    if DebugMode then print(Config.button)end
     local dialog = exports['qb-input']:ShowInput({
-        header = "Cambio de nombre",
-        submitText = "Cambiar Nombre",
+        header = Config.changenameTitle,
+        submitText = Config.button,
         inputs = {
             {
-                text = "Nombre", -- text you want to be displayed as a place holder
+                text = Config.firstname, -- text you want to be displayed as a place holder
                 name = "firstname", -- name of the input should be unique otherwise it might override
                 type = "text", -- type of the input
                 isRequired = true, -- Optional [accepted values: true | false] but will submit the form if no value is inputted
             },
             {
-                text = "Apellido", -- text you want to be displayed as a place holder
+                text = Config.lastname, -- text you want to be displayed as a place holder
                 name = "lastname", -- name of the input should be unique otherwise it might override
                 type = "text", -- type of the input
                 isRequired = true, -- Optional [accepted values: true | false] but will submit the form if no value is inputted
