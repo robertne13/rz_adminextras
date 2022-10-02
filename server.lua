@@ -3,7 +3,6 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 
 QBCore.Commands.Add("setname", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
---QBCore.Commands.Add('setname', '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
     local src = source
     if args[1] ~= nil then
         print("^1Cambio nombre: ^0" .. args[1])
@@ -38,11 +37,11 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , citizeni
     )
 end)
 
+--not used
 function getIds(source)
 	local id = GetPlayerIdentifiers(source)
     local license = "ERROR"
     for k,v in ipairs(id)do
-		--print ("ID: ".. v)
 		if string.sub(v, 1, string.len("license:")) == "license:" then
 			license = v
 		end
