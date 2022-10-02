@@ -7,8 +7,11 @@ Simple command to change player name on QBCORE
 With Webhooks to inform
 
 Future update:
+
 PK Command
+
 Requiere: qb-input and oxmysql
+
 Read the config.lua and configure webhook
 
 <hr>
