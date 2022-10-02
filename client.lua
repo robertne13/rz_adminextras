@@ -1,6 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-
+function trim(s)
+    return s:match( "^%s*(.-)%s*$" )
+ end
 
 RegisterNetEvent('rz_adminextras:newname')
 AddEventHandler('rz_adminextras:newname', function()
@@ -27,11 +29,22 @@ AddEventHandler('rz_adminextras:newname', function()
     })
 
     if dialog ~= nil then
-        local finalname = {}
+        local newfirstname = 'error'
+        local newlastname = 'error'
         for k,v in pairs(dialog) do
-            finalname.k = v
-            print(k .. " : " .. v)
+            local key = trim(k)
+            print("::: " ..key .." :::")
+            if tostring(key) == 'firstname' then
+                newfirstname = v
+                print("::: OK :::")
+            end
+            if tostring(key) == 'lastname' then
+                newlastname = v
+                print("::: OK2 :::")
+            end
         end
-        TriggerServerEvent('rz_adminextras:readyname', finalname)
+        print(newfirstname.." " ..newlastname)
+        
+        TriggerServerEvent('rz_adminextras:readyname', newfirstname , newlastname)
     end
 end)
