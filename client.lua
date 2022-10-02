@@ -1,13 +1,14 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local DebugMode = false
+local DebugMode = Config.Debug
 
 function trim(s)
     return s:match( "^%s*(.-)%s*$" )
  end
 
 RegisterNetEvent('rz_adminextras:newname')
-AddEventHandler('rz_adminextras:newname', function()
-    print("Cambiar nombre")
+AddEventHandler('rz_adminextras:newname', function(adminId)
+    local admin = adminId
+    if DebugMode then print("Cambiar nombre")end
     local dialog = exports['qb-input']:ShowInput({
         header = "Cambio de nombre",
         submitText = "Cambiar Nombre",
@@ -44,6 +45,6 @@ AddEventHandler('rz_adminextras:newname', function()
         end
         if DebugMode then print(newfirstname.." " ..newlastname) end
 
-        TriggerServerEvent('rz_adminextras:readyname', newfirstname , newlastname)
+        TriggerServerEvent('rz_adminextras:readyname', newfirstname , newlastname, admin)
     end
 end)
