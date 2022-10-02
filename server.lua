@@ -12,6 +12,16 @@ QBCore.Commands.Add("setname", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}
     end
 end, 'god')
 
+--not ready
+QBCore.Commands.Add("pk", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
+    local src = source
+    if args[1] ~= nil then
+        print("^1PK: ^0" .. args[1])
+        
+    else
+        print("^1 ERROR PK ID ERRONEA^0")
+    end
+end, 'god')
 
 RegisterNetEvent('rz_adminextras:readyname')
 AddEventHandler('rz_adminextras:readyname', function(newname, newlast , citizenid)
@@ -30,6 +40,7 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , citizeni
     charinfo.firstname = fnew
     charinfo.lastname = lnew
     charinfo = json.encode(charinfo)
+    DropPlayer(src ,'Su Nombre ha sido cambiado con exito, Ingrese nuevamente al servidor')
     MySQL.Async.execute('UPDATE players SET charinfo = @charinfo WHERE citizenid = @senderId',
     { ['charinfo'] =  charinfo, ['senderId'] = Player.PlayerData.citizenid },
     function(affectedRows)
