@@ -42,7 +42,7 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , adminid)
     charinfo.firstname = fnew
     charinfo.lastname = lnew
     charinfo = json.encode(charinfo)
-   -- DropPlayer(src ,'Su Nombre ha sido cambiado con exito, Ingrese nuevamente al servidor')
+    DropPlayer(src ,'Su Nombre ha sido cambiado con exito, Ingrese nuevamente al servidor')
     MySQL.Async.execute('UPDATE players SET charinfo = @charinfo WHERE citizenid = @senderId',
     { ['charinfo'] =  charinfo, ['senderId'] = Player.PlayerData.citizenid },
     function(affectedRows)
