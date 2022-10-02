@@ -67,6 +67,6 @@ function getIds(source)
 end
 
 function informDiscord(webhook, message)
-    print("Discord Send: " ..message)
+    if DebugMode then  print("Discord Send: " ..message) end
     PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', message, { ['Content-Type'] = 'application/json' })
 end
