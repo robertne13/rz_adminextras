@@ -8,6 +8,8 @@ With Webhooks to inform
 
 Future update:
 PK Command
+Requiere: qb-input and oxmysql
+Read the config.lua and configure webhook
 
 <hr>
 <p align="center"><img src="https://cdn.discordapp.com/attachments/758145885770350622/1026060431757934652/unknown.png"/></p>
