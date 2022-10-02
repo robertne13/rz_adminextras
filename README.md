@@ -1,0 +1,1 @@
+Simple command to change player name on QBCORE
