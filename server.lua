@@ -12,6 +12,16 @@ QBCore.Commands.Add("setname", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}
     end
 end, 'god')
 
+QBCore.Commands.Add("pk", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
+    local src = source
+    if args[1] ~= nil then
+        print("^1Player Kill: ^0" .. args[1])
+        TriggerClientEvent('rz_adminextras:newname', args[1])
+    else
+        print("^1 ERROR AL CAMBIAR NOMBRE ID ERRONEA^0")
+    end
+end, 'god')
+
 RegisterNetEvent('rz_adminextras:readyname')
 AddEventHandler('rz_adminextras:readyname', function(newname, newlast , citizenid)
     local src = source
@@ -37,7 +47,7 @@ AddEventHandler('rz_adminextras:readyname', function(newname, newlast , citizeni
     )
 end)
 
---not used
+--not used maybe will be used on esx support future update
 function getIds(source)
 	local id = GetPlayerIdentifiers(source)
     local license = "ERROR"
