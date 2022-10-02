@@ -10,7 +10,7 @@ QBCore.Commands.Add(Config.CommandName, '(ADMIN ONLY)', {{id = "id", help = 'Pla
     else
         print("^1 ERROR AL CAMBIAR NOMBRE ID ERRONEA^0")
     end
-end, 'god')
+end, Config.RequieredPerm)
 
 --not ready
 QBCore.Commands.Add("pk", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, false, function(source, args)
@@ -21,7 +21,7 @@ QBCore.Commands.Add("pk", '(ADMIN ONLY)', {{id = "id", help = 'Player id'}}, fal
     else
         print("^1 ERROR PK ID ERRONEA^0")
     end
-end, 'god')
+end, Config.RequieredPerm)
 
 RegisterNetEvent('rz_adminextras:readyname')
 AddEventHandler('rz_adminextras:readyname', function(newname, newlast , adminid)
