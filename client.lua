@@ -1,5 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local DebugMode = false
+
 function trim(s)
     return s:match( "^%s*(.-)%s*$" )
  end
