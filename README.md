@@ -6,9 +6,7 @@
 Simple command to change player name on QBCORE
 With Webhooks to inform
 
-Future update:
 
-PK Command
 
 Requiere: qb-input and oxmysql
 
@@ -18,4 +16,7 @@ Read the config.lua and configure webhook
 <p align="center"><img src="https://cdn.discordapp.com/attachments/758145885770350622/1026060431757934652/unknown.png"/></p>
 <p align="center"><img src="https://cdn.discordapp.com/attachments/950538644358324234/1026058919208034304/unknown.png"/></p>
 
+<hr>
+Future update:
 
+PK Command
