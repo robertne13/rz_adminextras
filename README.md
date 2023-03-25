@@ -1,6 +1,6 @@
 <p align="center"><img src="https://imgur.com/W1dzVBA.png"/></p>
 <h1 align='center'>AdminExtras</a></h1>
-<h1 align='center'> Ultra Team </a></h1>
+<h1 align='center'> RZ-Scripts Team </a></h1>
 
 
 
