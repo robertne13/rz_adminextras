@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.discordapp.com/attachments/950538644358324234/1026191182214209636/logoreadypn2Aopy.png"/></p>
+<p align="center"><img src="https://imgur.com/W1dzVBA.png"/></p>
 <h1 align='center'>AdminExtras</a></h1>
 <h1 align='center'> Ultra Team </a></h1>
 
