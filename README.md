@@ -4,7 +4,7 @@
 
 
 
-<p align='center'><b><a href='https://discord.gg/y9NYBT26SK'>Discord</a> - <a href='https://ultra-code.tebex.io/package/4986282'>Website</a> </b></h5>
+<p align='center'><b><a href='https://imgur.com/W1dzVBA'>Discord</a> - <a href='https://ultra-code.tebex.io/package/4986282'>Website</a> </b></h5>
 
 <hr>
 Simple command to change player name on QBCORE
